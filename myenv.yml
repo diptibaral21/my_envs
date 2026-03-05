@@ -1,0 +1,32 @@
+#This is my everything environment
+
+name: myenv
+channels:
+  - conda-forge  # community-maintained channel; best for geospatial packages
+  - defaults      # default Anaconda channel
+
+dependencies:
+  - python=3.10      # Python version
+  - ipykernel
+  - scikit-learn=1.2.2  # Machine learning library: regression, classification, clustering, model evaluation
+  - matplotlib=3.7.1     # Plotting and visualization library
+  - pandas=1.5.3         # Data analysis and manipulation (DataFrames, CSV/Excel handling)
+  - numpy=1.24.3         # Fundamental library for numerical computing, arrays, linear algebra
+  - netcdf4=1.6.3        # Read/write NetCDF files (common for climate/agriculture data)
+  - nco=5.1.6            # NetCDF inspection and preprocessing tools
+  - seaborn=0.12.2       # Statistical data visualization (built on matplotlib)
+  - scipy=1.10.1         # Scientific computing: optimization, interpolation, signal processing, stats
+  - xarray=2023.4.2      # Labeled multi-dimensional arrays, works well with NetCDF
+  - geopandas=0.13.0     # Geospatial data handling (like pandas but for shapefiles, rasters)
+  - yellowbrick=1.5      # Machine learning visualization: model evaluation plots, feature importance       
+  - cartopy=0.21.1       # Geospatial mapping: creating maps, projections, coastlines, shapefiles
+  - gdal=3.6.4          # Geospatial Data Abstraction Library: reads/writes raster/vector formats (required by osgeo)
+  - glob2                # Enhanced file pattern matching for recursive file searches (improved glob)
+  - pip                  # Include pip to install additional packages
+  - pip:
+      - salem             # Geospatial analysis for climate data, works with xarray
+      - intake-esm==2023.11.10 #to download LOCA2_CA 
+      - earthengine-api=1.7.10  #to use GEE in python 
+      - geemap            # to map gee like maps in python
+
+
